@@ -14,33 +14,6 @@ export default function ProfilePage() {
     router.push('/')
   }
 
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen bg-gray-50 pb-20">
-        <header className="bg-white border-b border-gray-100 px-4 py-4">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-xl font-semibold text-gray-900">Perfil</h1>
-          </div>
-        </header>
-
-        <div className="flex flex-col items-center justify-center h-[60vh] px-4">
-          <User size={80} className="text-gray-200 mb-6" />
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">Faça login para continuar</h2>
-          <p className="text-gray-500 text-center mb-6">
-            Acesse sua conta para ver seus pedidos e favoritos
-          </p>
-          <button
-            onClick={() => router.push('/login')}
-            className="bg-lime-500 hover:bg-lime-600 text-white px-8 py-3 rounded-xl font-semibold transition"
-          >
-            Fazer Login
-          </button>
-        </div>
-
-        <BottomNavigation />
-      </div>
-    )
-  }
 
   return (
     <div className="min-h-screen bg-gray-50 pb-20">
@@ -51,8 +24,8 @@ export default function ProfilePage() {
               <User size={32} className="text-lime-600" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">{user?.name}</h1>
-              <p className="text-gray-500">{user?.phone}</p>
+              <h1 className="text-xl font-bold text-gray-900">Olá, {user?.name}</h1>
+              <h1 className="text-gray-500">{user?.email}</h1>
             </div>
           </div>
         </div>
